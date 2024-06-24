@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 151856949}
   - component: {fileID: 151856948}
   m_Layer: 5
-  m_Name: precio_txt
+  m_Name: PrecioArriba_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -858,10 +858,17 @@ MonoBehaviour:
   - {fileID: 1317754467}
   - {fileID: 2077235711}
   - {fileID: 580637008}
-  objetoActivado: {fileID: 0}
+  objetoActivadoARRIBA: {fileID: 0}
   producto: {fileID: 0}
-  txtPrecio: {fileID: 151856948}
-  coordentadas: {x: -9, y: 2, z: 5}
+  txtPrecioArriba: {fileID: 151856948}
+  txtResultado: {fileID: 0}
+  txtPrecioD: {fileID: 2118832829}
+  txtPrecioM: {fileID: 1641516164}
+  txtPrecioI: {fileID: 1732605499}
+  coordenadasArriba: {x: -9, y: 2, z: 5}
+  coordenadasAbajoD: {x: 12, y: -4, z: 10}
+  coordenadasAbajoM: {x: 0, y: -4, z: 10}
+  coordenadasAbajoI: {x: -10, y: -4, z: 10}
 --- !u!4 &858235907
 Transform:
   m_ObjectHideFlags: 0
@@ -897,7 +904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3fcd39aa2ec0a71498577801779fcd1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3fcd39aa2ec0a71498577801779fcd1e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1061,11 +1068,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: a1b74c574d244b6459c6e642d07c84d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.1
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: a1b74c574d244b6459c6e642d07c84d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: a1b74c574d244b6459c6e642d07c84d1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1138,11 +1145,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c18aa9916828eca42bd4f22462460597, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c18aa9916828eca42bd4f22462460597, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c18aa9916828eca42bd4f22462460597, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1279,7 +1286,7 @@ GameObject:
   - component: {fileID: 1641516165}
   - component: {fileID: 1641516164}
   m_Layer: 5
-  m_Name: precio2_txt
+  m_Name: PrecioM_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1529,7 +1536,7 @@ GameObject:
   - component: {fileID: 1732605500}
   - component: {fileID: 1732605499}
   m_Layer: 5
-  m_Name: precio1_txt
+  m_Name: PrecioI_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1786,7 +1793,7 @@ GameObject:
   - component: {fileID: 2118832830}
   - component: {fileID: 2118832829}
   m_Layer: 5
-  m_Name: precio3_txt
+  m_Name: PrecioD_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
