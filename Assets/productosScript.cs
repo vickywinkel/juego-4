@@ -5,7 +5,6 @@ using UnityEngine;
 public class productosScript : MonoBehaviour
 {
     public GameObject[] objetos;
-    private int counter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +13,8 @@ public class productosScript : MonoBehaviour
         {
             objetos[i].SetActive(false);
         }
+        int azar = Random.Range(0, objetos.Length);
+        objetos[azar].SetActive(true); 
     }
 
     // Update is called once per frame
