@@ -22,6 +22,11 @@ public class productosScript : MonoBehaviour
 
     int valorDinero = 40;
 
+    public string Selected;
+
+    public GameObject panelSelected; 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,41 +36,40 @@ public class productosScript : MonoBehaviour
         }
 
         GenerarRandom();
-        objetoActivadoARRIBA.transform.position = coordenadasArriba;
+        Instantiate(objetoActivadoARRIBA, coordenadasArriba, objetoActivadoARRIBA.transform.rotation);
         producto = objetoActivadoARRIBA.GetComponent<objetoScript>();
         int precioDeArriba = producto.precio; 
         txtPrecioArriba.text = ("$" + producto.precio);
-        Debug.Log(producto.precio);
 
         GenerarRandom();
-        objetoActivadoARRIBA.transform.position = coordenadasAbajoD;
+        Instantiate(objetoActivadoARRIBA, coordenadasAbajoD, objetoActivadoARRIBA.transform.rotation);
         producto = objetoActivadoARRIBA.GetComponent<objetoScript>();
         int precioDeAbajoD = producto.precio;
-        txtPrecioD.text = ("$" + producto.precio);
-        Debug.Log(producto.precio);
+        txtPrecioD.text = ("$" + producto.precio);       
 
         GenerarRandom();
-        objetoActivadoARRIBA.transform.position = coordenadasAbajoM;
+        Instantiate(objetoActivadoARRIBA, coordenadasAbajoM, objetoActivadoARRIBA.transform.rotation);
         producto = objetoActivadoARRIBA.GetComponent<objetoScript>();
         int precioDeAbajoM = producto.precio;
         txtPrecioM.text = ("$" + producto.precio);
-        Debug.Log(producto.precio);
 
         GenerarRandom();
-        objetoActivadoARRIBA.transform.position = coordenadasAbajoI;
+        Instantiate(objetoActivadoARRIBA, coordenadasAbajoI, objetoActivadoARRIBA.transform.rotation);
         producto = objetoActivadoARRIBA.GetComponent<objetoScript>();
         int precioDeAbajoI = producto.precio;
         txtPrecioI.text = ("$" + producto.precio);
-        Debug.Log (producto.precio);
 
         int[] arrayPrecios = { precioDeAbajoD, precioDeAbajoI, precioDeAbajoM };
         int precioAzar = Random.Range(0, arrayPrecios.Length);
 
         int precioTotal = precioDeArriba + arrayPrecios[precioAzar];
 
-        txtResultado.text = ("$" + precioTotal); 
+        txtResultado.text = ("$" + precioTotal);
 
-    }
+
+        panelSelected.SetActive(false); 
+            
+      }
 
     // Update is called once per frame
     void Update()
@@ -96,19 +100,37 @@ public class productosScript : MonoBehaviour
         txtPrecioD.color = Color.red;
         txtPrecioM.color = Color.black;
         txtPrecioI.color = Color.black;
+
+        Selected = "D";
     }
     public void cambioColorM()
     {
         txtPrecioD.color = Color.black; 
         txtPrecioM.color = Color.red;
         txtPrecioI.color = Color.black;
+
+        Selected = "M";
     }
     public void cambioColorI()
     {
         txtPrecioD.color = Color.black; 
         txtPrecioM.color = Color.black;
-        txtPrecioI.color = Color.red; 
+        txtPrecioI.color = Color.red;
+
+        Selected = "I";
     }
 
 
+    public void BotonApretar()
+    {
+        if (Selected == "")
+        {
+            panelSelected.SetActive(true);
+        }
+    }
+
+    public void BotonCerrarPanel()
+    {
+        panelSelected.SetActive(false);
+    }
 }
