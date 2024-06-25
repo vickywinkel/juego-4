@@ -8,11 +8,13 @@ public class productosScript : MonoBehaviour
     public GameObject[] objetos;
     public GameObject objetoActivadoARRIBA;
     public objetoScript producto;
+
     public Text txtPrecioArriba;
     public Text txtResultado;
     public Text txtPrecioD;
     public Text txtPrecioM;
     public Text txtPrecioI;
+
     public Vector3 coordenadasArriba = new Vector3(-9, 2, 5);
     public Vector3 coordenadasAbajoD = new Vector3(12,-4,10);
     public Vector3 coordenadasAbajoM = new Vector3(0,-4,10);
@@ -31,26 +33,37 @@ public class productosScript : MonoBehaviour
         GenerarRandom();
         objetoActivadoARRIBA.transform.position = coordenadasArriba;
         producto = objetoActivadoARRIBA.GetComponent<objetoScript>();
+        int precioDeArriba = producto.precio; 
         txtPrecioArriba.text = ("$" + producto.precio);
         Debug.Log(producto.precio);
 
         GenerarRandom();
         objetoActivadoARRIBA.transform.position = coordenadasAbajoD;
         producto = objetoActivadoARRIBA.GetComponent<objetoScript>();
+        int precioDeAbajoD = producto.precio;
         txtPrecioD.text = ("$" + producto.precio);
         Debug.Log(producto.precio);
 
         GenerarRandom();
         objetoActivadoARRIBA.transform.position = coordenadasAbajoM;
         producto = objetoActivadoARRIBA.GetComponent<objetoScript>();
+        int precioDeAbajoM = producto.precio;
         txtPrecioM.text = ("$" + producto.precio);
         Debug.Log(producto.precio);
 
         GenerarRandom();
         objetoActivadoARRIBA.transform.position = coordenadasAbajoI;
         producto = objetoActivadoARRIBA.GetComponent<objetoScript>();
+        int precioDeAbajoI = producto.precio;
         txtPrecioI.text = ("$" + producto.precio);
         Debug.Log (producto.precio);
+
+        int[] arrayPrecios = { precioDeAbajoD, precioDeAbajoI, precioDeAbajoM };
+        int precioAzar = Random.Range(0, arrayPrecios.Length);
+
+        int precioTotal = precioDeArriba + arrayPrecios[precioAzar];
+
+        txtResultado.text = ("$" + precioTotal); 
 
     }
 
