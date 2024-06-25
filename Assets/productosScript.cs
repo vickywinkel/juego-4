@@ -89,4 +89,26 @@ public class productosScript : MonoBehaviour
         objetoActivadoARRIBA.SetActive(true);
 
     }
+
+
+    public void cambioColorD()
+    {
+        txtPrecioD.color = Color.red;
+        txtPrecioM.color = Color.black;
+        txtPrecioI.color = Color.black;
+    }
+    public void cambioColorM()
+    {
+        txtPrecioD.color = Color.black; 
+        txtPrecioM.color = Color.red;
+        txtPrecioI.color = Color.black;
+    }
+    public void cambioColorI()
+    {
+        txtPrecioD.color = Color.black; 
+        txtPrecioM.color = Color.black;
+        txtPrecioI.color = Color.red; 
+    }
+
+
 }
