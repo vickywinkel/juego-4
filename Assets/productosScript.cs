@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class productosScript : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class productosScript : MonoBehaviour
     public GameObject panelSelected;
     public GameObject panelNotificaciones;
     public Text txtGanaste;
+    public Button btnVolverajugar;
+    public Text Buttontxtjugar;
+    public Button btnSalir;
+    public Text ButtontxtSalir;
+
 
     // Start is called before the first frame update
     void Start()
@@ -82,7 +88,6 @@ public class productosScript : MonoBehaviour
 
     }
 
-
     void GenerarRandom()
     {
         int azar = Random.Range(0, objetos.Length);
@@ -131,10 +136,12 @@ public class productosScript : MonoBehaviour
             if ( precioDeArriba + precioDeAbajoD == Total) 
             {
                 txtGanaste.text = "Ganaste";
+                Buttontxtjugar.text = "Reiniciar el desafío";
             }
             else
             {
                 txtGanaste.text = "Perdiste";
+                Buttontxtjugar.text = "Volver a intentarlo";
             }
         }
         
@@ -144,10 +151,12 @@ public class productosScript : MonoBehaviour
             if ( precioDeArriba + precioDeAbajoI == Total) 
             {
                 txtGanaste.text = "Ganaste";
+                Buttontxtjugar.text = "Reiniciar el desafío";
             }
             else
             {
                 txtGanaste.text = "Perdiste";
+                Buttontxtjugar.text = "Volver a intentarlo";
             }
         }
         
@@ -157,10 +166,12 @@ public class productosScript : MonoBehaviour
             if ( precioDeArriba + precioDeAbajoM == Total) 
             {
                 txtGanaste.text = "Ganaste";
+                Buttontxtjugar.text = "Reiniciar el desafío";
             }
             else
             {
                 txtGanaste.text = "Perdiste";
+                Buttontxtjugar.text = "Volver a intentarlo";
             }
         }
     }
@@ -168,5 +179,25 @@ public class productosScript : MonoBehaviour
     public void BotonCerrarPanel()
     {
         panelSelected.SetActive(false);
+    }
+    public void BotonCerrarPanelNotificaciones()
+    {
+        if (Buttontxtjugar.text == "Volver a intentarlo")
+        {
+            panelNotificaciones.SetActive(false);
+        }
+    }
+    public void ReiniciarJuego()
+    {
+        if (Buttontxtjugar.text == "Reiniciar el desafío")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GenerarRandom();
+        }
+        
+    }
+    public void CambiarEscena()
+    {
+        SceneManager.LoadScene("SeleccionarJuego");
     }
 }
